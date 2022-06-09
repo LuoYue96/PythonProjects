@@ -22,5 +22,30 @@ import re
 # print(res.group())
 #小练习，匹配邮箱
 #在匹配‘.com’时，需要注意转义
-res=re.match('[a-zA-Z0-9]{6,11}@163\.com','dasdd41@163.com')
-print(res.group())
+# res=re.match('[a-zA-Z0-9]{6,11}@163\.com','dasdd41@163.com')
+# print(res.group())
+# print(re.match(r'C:\\a.txt','C:\\a.txt').group())
+#print(r'C:\a.tct')
+# ^ 匹配字符串开头
+# result='Python is the best language'
+# res = re.match('^P[\w,\s]*',result)
+# if res:
+#     print(res.group())
+#$ 匹配字符串末尾
+#以匹配邮箱为例
+# mailaddress='lkda123@sina.com'
+# res = re.match('[\w]{4,9}@[\w]{2,4}\.com$',mailaddress)
+# if res:
+#     print(res.group())
+# | 竖线，匹配左右任意一个表达式 实际上是 或的关系
+# data = 'dsdasd123'
+# print(re.match('dsdasc|dsdasd123',data).group())
+# (ab)分组匹配，每个括号为一组
+#匹配电话号码
+#   ^有两种含义，一种是代表开头   另一种是取反，否定
+# res=re.match('([0-9]*)-([\d]*)','0316-8395903')
+res=re.match('([^-]*)-([\d]*)','aaa-8395903')
+print(res.groups())
+print(res.group(0))
+print(res.group(1))
+print(res.group(2))
