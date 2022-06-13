@@ -44,8 +44,19 @@ import re
 #匹配电话号码
 #   ^有两种含义，一种是代表开头   另一种是取反，否定
 # res=re.match('([0-9]*)-([\d]*)','0316-8395903')
-res=re.match('([^-]*)-([\d]*)','aaa-8395903')
-print(res.groups())
-print(res.group(0))
-print(res.group(1))
-print(res.group(2))
+# res=re.match('([^-]*)-([\d]*)','aaa-8395903')
+# print(res.groups())
+# print(res.group(0))
+# print(res.group(1))
+# print(res.group(2))
+#\num 的使用，引用分组num匹配到的字符串
+# htmltag='<html><h1>TestData</h1></html>'
+# res=re.match(r'<(.+)><(.+)>(.+)</\2></\1>',htmltag)
+# print(res.group(1))
+# print(res.group(2))
+# print(res.group(3))
+# print(res.group())
+#引用分组 取别名
+data='<div><h1>www.baidu.com</h1></div>'
+res2=re.match(r'<(?P<name1>\w+)><(?P<name2>\w+)>.+</(?P=name2)></(?P=name1)>',data)
+print(res2.group())
