@@ -57,6 +57,32 @@ import re
 # print(res.group(3))
 # print(res.group())
 #引用分组 取别名
-data='<div><h1>www.baidu.com</h1></div>'
-res2=re.match(r'<(?P<name1>\w+)><(?P<name2>\w+)>.+</(?P=name2)></(?P=name1)>',data)
-print(res2.group())
+# data='<div><h1>www.baidu.com</h1></div>'
+# res2=re.match(r'<(?P<name1>\w+)><(?P<name2>\w+)>.+</(?P=name2)></(?P=name1)>',data)
+# print(res2.group())
+#compile re模块中的编译方法，可以把一个字符串编译成字节码
+#优点，在使用正则表达式进行match的操作时，python会将字符串转为正则表达式对象：
+#而如果使用compile则只需要完成一次转换即可，以后再匹配同规则时无需重复转换
+# reobj=re.compile('\d{3}')
+# rs=reobj.match('12345678')
+# print(rs.group())
+# #等价于直接使用match编写正则规则
+# print(re.match('\d{3}','1234567').group())
+# data='123 456 123 753 12314wowww'
+# res=re.search('123',data)
+# print(res.span())
+# print(res.group())
+# print(res)
+# findall
+# text='中华有为，华为，华华'
+# reobj=re.compile('华.')
+# print(reobj.findall(text))
+# re.sub
+# re.subn
+# data='Python 是最好的语言Python'
+# pattren='[a-zA-Z]+'
+# print(re.sub(pattren,'Java',data,count=0))
+# #subn 会返回一个包含两个元素的元组，第一个元素是修改后的字符串，第二个元素是替换的次数
+# print(re.subn(pattren,'Java',data,count=0))
+data='百度，阿里，腾讯，华为'
+print(re.split(',',data))
