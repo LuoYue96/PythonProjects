@@ -1,4 +1,6 @@
 import socket
+import time
+
 
 if __name__ == '__main__':
 
@@ -7,7 +9,9 @@ if __name__ == '__main__':
     #2.与服务器建立连接
     tcp_client.connect(("127.0.0.1",8888))
     #3.发送数据
+    time.sleep(3)
     tcp_client.send('nihao'.encode(encoding='utf-8'))
+
     #4.接收数据
     recv_data = tcp_client.recv(1024)
 
