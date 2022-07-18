@@ -31,9 +31,9 @@ if __name__ == '__main__':
             # 响应行
             response_line = "HTTP/1.1 404 Not found\r\n"
             # 响应头
-            response_header = "Server:PythonWeb"
+            response_header = "Server:PythonWeb\r\n"
             # 响应体
-            response_body = "404 Not found sorry"
+            response_body = "404 Not found sorry\r\n"
             # 响应内容
             response_data = (response_line + response_header + "\r\n" + response_body).encode()
             client_socket.send(response_data)
