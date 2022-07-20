@@ -36,7 +36,7 @@ def client_handle(client_socket):
         # 响应行
         response_line = "HTTP/1.1 200 ok\r\n"
         # 响应头
-        response_header = "Server:PythonWeb"
+        response_header = "Server:PythonWeb\r\n"
         # 响应体
         response_body = file_data
         # 响应内容
